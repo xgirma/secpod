@@ -1,2 +1,2 @@
-# secpod-v2
+# Secpod-v2
 Security podcast organizer. 
