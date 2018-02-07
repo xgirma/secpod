@@ -12,8 +12,8 @@ class Header extends Component {
 	
 	render () {
 		return (
-			<div>
-				{ "hello" + 5 }
+			<div className="App-header">
+				<h4> Home | Playlist | List </h4>
 			</div>
 		)
 	}

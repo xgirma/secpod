@@ -13,8 +13,12 @@ class Application extends Component {
 	
 	render() {
 		return (
-			<div>
-				{"hello" + 5}
+			<div className="App">
+				<Header/>
+				<h1> Podcast on Security</h1>
+				<Player/>
+				<TopTen/>
+				<Footer/>
 			</div>
 		)
 	}

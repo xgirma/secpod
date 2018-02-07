@@ -12,7 +12,7 @@ class TopTen extends Component {
 	
 	render() {
 		return (
-			<div>
+			<div className="App-TopTen">
 				{"hello" + 5}
 			</div>
 		)

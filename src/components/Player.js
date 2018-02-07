@@ -12,8 +12,12 @@ class Player extends Component {
 	
 	render() {
 		return (
-			<div>
-				{"hello" + 5}
+			<div className="App-header">
+				<audio
+					// src="http://www.nihilus.net/soundtracks/Static%20Memories.mp3"
+					autoPlay>
+					Your browser does not support the <code>audio</code> element.
+				</audio>
 			</div>
 		)
 	}

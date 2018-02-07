@@ -1,13 +1,24 @@
-html, * {
-  box-sizing: border-box;
-}
-
 body {
   font: caption;
 }
 
 .App {
-  text-align: left;
+  text-align: center;
   margin: auto;
-  max-width: 400px;
+}
+
+.App-Footer {
+
+}
+
+.App-Header {
+
+}
+
+.App-Player {
+
+}
+
+.App-TopTen {
+
 }
