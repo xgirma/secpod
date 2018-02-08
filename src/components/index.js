@@ -4,8 +4,8 @@ import Player from './Player';
 import TopTen from './TopTen';
 
 export {
-	Footer,
-	Header,
-	Player,
-	TopTen,
+  Footer,
+  Header,
+  Player,
+  TopTen,
 };

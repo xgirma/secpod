@@ -1,22 +1,22 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class App extends Component {
-	displayName = 'name';
-	
+class Footer extends Component {
 	static propTypes = {};
-	
+
 	static defaultProps = {};
-	
+
+	displayName = 'Footer';
+
 	state = {};
-	
+
 	render() {
-		return (
-			<div className="App-Footer">
-				{"hello" + 5}
-			</div>
-		)
+	  return (
+  <div className="footer">
+    {`Footer: ${5}`}
+  </div>
+	  );
 	}
 }
 
-export default App;
+export default Footer;

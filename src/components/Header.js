@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Header.css';
 
 class Header extends Component {
-	displayName = '';
-	
 	static propTypes = {};
-	
+
 	static defaultProps = {};
-	
+
+	displayName = 'Header';
+
 	state = {};
-	
-	render () {
-		return (
-			<div className="App-header">
-				<h4> Home | Playlist | List </h4>
-			</div>
-		)
+
+	render() {
+	  return (
+  <div className="header">
+    <h4> Home | Playlist | List </h4>
+  </div>
+	  );
 	}
 }
 

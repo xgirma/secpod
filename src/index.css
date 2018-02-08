@@ -1,24 +1,6 @@
 body {
   font: caption;
-}
-
-.App {
-  text-align: center;
-  margin: auto;
-}
-
-.App-Footer {
-
-}
-
-.App-Header {
-
-}
-
-.App-Player {
-
-}
-
-.App-TopTen {
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

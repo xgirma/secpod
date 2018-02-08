@@ -1,26 +1,27 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Footer, Header, Player, TopTen }  from './index';
+import { Footer, Header, Player, TopTen } from './index';
+import './Application.css';
 
 class Application extends Component {
-	displayName = 'name';
-	
 	static propTypes = {};
-	
+
 	static defaultProps = {};
-	
+
+	displayName = 'Application';
+
 	state = {};
-	
+
 	render() {
-		return (
-			<div className="App">
-				<Header/>
-				<h1> Podcast on Security</h1>
-				<Player/>
-				<TopTen/>
-				<Footer/>
-			</div>
-		)
+	  return (
+  <div className="app">
+    <Header />
+    <h1> Podcast on Security</h1>
+    <Player />
+    <TopTen />
+    <Footer />
+  </div>
+	  );
 	}
 }
 

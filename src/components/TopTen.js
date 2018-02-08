@@ -1,21 +1,21 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class TopTen extends Component {
-	displayName = 'name';
-	
 	static propTypes = {};
-	
+
 	static defaultProps = {};
-	
+
+	displayName = 'TopTen';
+
 	state = {};
-	
+
 	render() {
-		return (
-			<div className="App-TopTen">
-				{"hello" + 5}
-			</div>
-		)
+	  return (
+  <div className="topTen">
+    {`Topten: ${5}`}
+  </div>
+	  );
 	}
 }
 
