@@ -1,19 +1,34 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import playlistType from '../type';
+import playlistDefault from '../data/default';
+import Pod from './Pod';
+import './TopTen.css';
 
 class TopTen extends Component {
-	static propTypes = {};
+	static propTypes = {
+	  playlist: playlistType,
+	};
 
-	static defaultProps = {};
+	static defaultProps = {
+	  playlist: playlistDefault,
+	};
 
 	displayName = 'TopTen';
 
-	state = {};
-
 	render() {
+	  const { playlist, onPodSelection } = this.props;
+
 	  return (
   <div className="topTen">
-    {`Topten: ${5}`}
+    {
+					playlist.map(pod => (
+  <Pod
+    key={pod._id}
+    pod={pod}
+    onPodSelection={() => onPodSelection(pod._id)}
+  />
+					))
+				}
   </div>
 	  );
 	}

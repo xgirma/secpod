@@ -11,6 +11,7 @@ class Application extends Component {
 	  playlist: playlistDefault,
 	  isLoading: false,
 	  error: null,
+	  sortByDate: true,
 	};
 
 	componentDidMount() {
@@ -35,8 +36,40 @@ class Application extends Component {
 	  }
 	}
 
+	async fetchTopTenLiked() {
+	  try {
+	    const response = await getTenLiked();
+	    this.setState({
+	      playlist: response,
+	      isLoading: false,
+	    });
+	  } catch (err) {
+	    this.setState({
+	      error: err,
+	      isLoading: false,
+	    });
+	  }
+	}
+
+	sortByLikes = (likes) => {
+	  if (likes) {
+	  }
+	};
+
+	sortBySelectedPod = (id) => {
+	  const { playlist } = this.state;
+	  const index = playlist.findIndex(pod => pod._id === id);
+	  const newPlaylist = [...(playlist.slice(index)), ...(playlist.slice(0, index))];
+	  this.setState({
+	    playlist: newPlaylist,
+	  }, () => console.log(this.state.playlist));
+	};
+
 	render() {
-	  const { playlist, isLoading, error } = this.state;
+	  const {
+	    playlist, isLoading,
+	  } = this.state;
+
 	  if (isLoading) {
 	    return <p>Loading ... </p>;
 	  }
@@ -46,9 +79,8 @@ class Application extends Component {
     <Header />
     <h1> Podcast on Security</h1>
     <Player playlist={playlist} />
-    <TopTen />
+    <TopTen playlist={playlist} onPodSelection={this.sortBySelectedPod} />
     <Footer />
-
   </div>
 	  );
 	}
