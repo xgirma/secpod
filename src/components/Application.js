@@ -80,6 +80,7 @@ class Application extends Component {
     <Player
 	    playlist={playlist}
 	    autoPlay={autoPlay}
+	    onPodSelection={this.sortBySelectedPod}
 	    onAutoPlay={this.handleAutoPlay}
     />
     <TopTen

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import TiSocialFacebook from 'react-icons/lib/ti/social-facebook';
+import TiSocialTwitter from 'react-icons/lib/ti/social-twitter';
+import MdThumbUp from 'react-icons/lib/md/thumb-up';
 import PropTypes from 'prop-types';
 import './Footer.css';
 

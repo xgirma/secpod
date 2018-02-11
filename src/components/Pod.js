@@ -25,7 +25,7 @@ class Pod extends Component {
 		    <b>{published} </b>
 	    </div>
 	    <div className="episode_title_pod">
-		    {pod.displayText} <b>{pod.duration}</b>
+		    {pod.displayText}
 	    </div>
     </a>
   </div>
