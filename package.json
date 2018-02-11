@@ -2,9 +2,11 @@
   "name": "create-react-app-template",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://xgirma.github.io/secpod",
   "dependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "gh-pages": "^1.1.0",
     "moment": "^2.20.1",
     "plyr": "^3.0.0-beta.12",
     "prop-types": "^15.6.0",
