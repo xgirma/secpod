@@ -21,7 +21,9 @@ class Pod extends Component {
 	  return (
   <div className="pod">
     <a onClick={this.handleClick} id="pod_pod">
-	    <div className="date_pod">{published} </div>
+	    <div className="date_pod">
+		    <b>{published} </b>
+	    </div>
 	    <div className="episode_title_pod">
 		    {pod.displayText} <b>{pod.duration}</b>
 	    </div>
