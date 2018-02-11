@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getRecentTen, getTenLiked } from '../api/api';
-import { Footer, Header, Player, TopTen } from './index';
-import playlistDefault from '../data/default';
+import { Footer, Player, TopTen } from './index';
+import { playlistDefault } from '../data/default';
 import './Application.css';
 
 class Application extends Component {
@@ -11,7 +11,7 @@ class Application extends Component {
 	  playlist: playlistDefault,
 	  isLoading: false,
 	  error: null,
-		autoPlay: false
+	  autoPlay: false,
 	};
 
 	componentDidMount() {
@@ -24,15 +24,15 @@ class Application extends Component {
 	async fetchRecentTen() {
 	  try {
 	    const response = await getRecentTen();
-		  this.setState({
-			  playlist: response,
-			  isLoading: false,
-		  });
+	    this.setState({
+	      playlist: response,
+	      isLoading: false,
+	    });
 	  } catch (err) {
-	  	this.setState({
-			  error: err,
-			  isLoading: false,
-		  });
+	    this.setState({
+	      error: err,
+	      isLoading: false,
+	    });
 	  }
 	}
 
@@ -52,9 +52,9 @@ class Application extends Component {
 	}
 
 	handleAutoPlay = (value) => {
-		this.setState({
-			autoPlay: value
-		});
+	  this.setState({
+	    autoPlay: value,
+	  });
 	};
 
 	sortBySelectedPod = (id) => {
@@ -63,12 +63,12 @@ class Application extends Component {
 	  const newPlaylist = [...(playlist.slice(index)), ...(playlist.slice(0, index))];
 	  this.setState({
 	    playlist: newPlaylist,
-	  }, () => console.log(this.state.playlist));
+	  });
 	};
 
 	render() {
 	  const {
-	    playlist, isLoading, autoPlay
+	    playlist, isLoading, autoPlay,
 	  } = this.state;
 
 	  if (isLoading) {
@@ -78,17 +78,17 @@ class Application extends Component {
 	  return (
   <div className="app">
     <Player
-	    playlist={playlist}
-	    autoPlay={autoPlay}
-	    onPodSelection={this.sortBySelectedPod}
-	    onAutoPlay={this.handleAutoPlay}
+      playlist={playlist}
+      autoPlay={autoPlay}
+      onPodSelection={this.sortBySelectedPod}
+      onAutoPlay={this.handleAutoPlay}
     />
     <TopTen
-	    playlist={playlist}
-	    onPodSelection={this.sortBySelectedPod}
-	    onAutoPlay={this.handleAutoPlay}
+      playlist={playlist}
+      onPodSelection={this.sortBySelectedPod}
+      onAutoPlay={this.handleAutoPlay}
     />
-    <Footer />
+    <Footer playlist={playlist} />
   </div>
 	  );
 	}

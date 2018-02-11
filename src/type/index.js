@@ -1,6 +1,6 @@
-import PropTypes, { shape, number, string, oneOf } from 'prop-types';
+import PropTypes, { shape, number, string } from 'prop-types';
 
-const pod = shape({
+const podType = shape({
   url: string,
   description: string,
   duration: number,
@@ -15,6 +15,6 @@ const pod = shape({
   _id: string,
 }).isRequired;
 
-const playlistType = PropTypes.arrayOf(pod);
+const playlistType = PropTypes.arrayOf(podType);
 
-export default playlistType;
+export { playlistType, podType };

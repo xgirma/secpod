@@ -13,11 +13,13 @@
 
 .navigation {
     align-self: flex-start;
-    font-size:200%;
+    font-size: 200%;
 }
 
 .social-player {
-    text-align: left;
+    text-align: center;
     background: #FFFAF0;
-    color: #1E4D2B;
+    color: black;
+    border: #F8F8FF;
+    border-radius: 8px;
 }

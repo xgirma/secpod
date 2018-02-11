@@ -2,9 +2,9 @@
     width: 680px;
 }
 
-.pod:hover  {
+.pod:hover {
     color: #FFFF00;
-
+    font-weight: bold;
 }
 
 #pod_pod {
@@ -12,12 +12,12 @@
 }
 
 .date_pod {
-    padding-left:21px;
-    width:13%;
+    padding-left: 21px;
+    width: 13%;
 }
 
 .episode_title_pod {
-    width:87%;
-    overflow:hidden;
-    text-overflow:ellipsis
+    width: 87%;
+    overflow: hidden;
+    text-overflow: ellipsis
 }
