@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import './Pod.css';
 
 class Pod extends Component {
@@ -7,13 +8,23 @@ class Pod extends Component {
 	static defaultProps = {};
 
 	displayName = 'Pod';
+	
+	handleClick = () => {
+		const { pod, onPodSelection, onAutoPlay} = this.props;
+		onPodSelection(pod._id);
+		onAutoPlay();
+	};
 
 	render() {
-	  const { pod, onPodSelection } = this.props;
+	  const { pod } = this.props;
+	  const published = moment(pod.published).format("MMM DD YY");
 	  return (
-  <div>
-    <a onClick={() => onPodSelection(pod._id)}>
-      {pod._id}. {pod.published} : {pod.displayText} : {pod.likes}
+  <div className="pod">
+    <a onClick={this.handleClick} id="pod_pod">
+	    <div className="date_pod">{published} </div>
+	    <div className="episode_title_pod">
+		    {pod.displayText} <b>{pod.duration}</b>
+	    </div>
     </a>
   </div>
 	  );

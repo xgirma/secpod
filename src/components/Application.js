@@ -11,7 +11,7 @@ class Application extends Component {
 	  playlist: playlistDefault,
 	  isLoading: false,
 	  error: null,
-	  sortByDate: true,
+		autoPlay: false
 	};
 
 	componentDidMount() {
@@ -51,9 +51,10 @@ class Application extends Component {
 	  }
 	}
 
-	sortByLikes = (likes) => {
-	  if (likes) {
-	  }
+	handleAutoPlay = (value) => {
+		this.setState({
+			autoPlay: value
+		});
 	};
 
 	sortBySelectedPod = (id) => {
@@ -67,7 +68,7 @@ class Application extends Component {
 
 	render() {
 	  const {
-	    playlist, isLoading,
+	    playlist, isLoading, autoPlay
 	  } = this.state;
 
 	  if (isLoading) {
@@ -76,10 +77,16 @@ class Application extends Component {
 
 	  return (
   <div className="app">
-    <Header />
-    <h1> Podcast on Security</h1>
-    <Player playlist={playlist} />
-    <TopTen playlist={playlist} onPodSelection={this.sortBySelectedPod} />
+    <Player
+	    playlist={playlist}
+	    autoPlay={autoPlay}
+	    onAutoPlay={this.handleAutoPlay}
+    />
+    <TopTen
+	    playlist={playlist}
+	    onPodSelection={this.sortBySelectedPod}
+	    onAutoPlay={this.handleAutoPlay}
+    />
     <Footer />
   </div>
 	  );

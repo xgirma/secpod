@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Footer.css';
 
 class Footer extends Component {
 	static propTypes = {};
@@ -13,7 +14,7 @@ class Footer extends Component {
 	render() {
 	  return (
   <div className="footer">
-    {`Footer: ${5}`}
+	  {'Contact Us: Follow us'}
   </div>
 	  );
 	}
